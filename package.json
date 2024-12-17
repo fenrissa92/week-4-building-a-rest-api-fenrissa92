@@ -1,7 +1,7 @@
 {
   "name": "building-a-rest-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Build a REST API using Node.js and Express\r - Create API endpoints allowing the user to create, read, update and delete a resource\r - Use Postman or ThunderClient to make HTTP requests to test API endpoints",
   "main": "app.js",
   "type": "module",
   "scripts": {
