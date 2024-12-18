@@ -65,7 +65,25 @@ res.status(201).json(newQuote);
 //update the quote with that id
 //respond with the updated quote
 
+app.patch("/quotes/:id", async function (req, res) {
+  const { quoteText, author } = req.body;
+  const quote = await editQuote(req.params.id, quoteText, author);
+  if (!quote) {
+    res.status(404).send("Quote not found");
+    return;
+  }
+  res.json(quote);
+});
 
+
+app.delete("/quotes/:id", async function (req, res) {
+  const quote = await deleteQuote(req.params.id);
+  if (!quote) {
+    res.status(404).send("Quote not found");
+    return;
+  }
+  res.json(quote);
+});
 
 
 app.listen(PORT, function () {
